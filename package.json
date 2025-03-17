@@ -1,0 +1,25 @@
+{
+  "name": "centenary-auth-api",
+  "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "db:generate": "drizzle-kit generate --dialect=postgresql --schema ./src/db/schema.ts --out=./src/db/migrations",
+    "db:migrate": "bun run ./src/db/migrate.ts",
+    "format": "bunx @biomejs/biome format ./src --write",
+    "lint": "bunx @biomejs/biome lint ./src",
+    "start": "bun run src/index.ts"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^0.10.4",
+    "better-auth": "^1.2.4",
+    "drizzle-orm": "^0.40.0",
+    "hono": "^4.7.4",
+    "postgres": "^3.4.5"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@cloudflare/workers-types": "^4.20250214.0",
+    "bun-types": "^1.2.5",
+    "drizzle-kit": "^0.30.5",
+    "tsx": "^4.19.3"
+  }
+}

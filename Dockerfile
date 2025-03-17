@@ -19,7 +19,7 @@ RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential node-gyp pkg-config python-is-python3
 
 # Install node modules
-COPY --link bun.lockb package-lock.json package.json ./
+COPY --link bun.lock package-lock.json package.json ./
 RUN bun install --ci
 
 # Copy application code
